@@ -1,0 +1,2 @@
+# NativeTypes
+Общие константы JAPI
