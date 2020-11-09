@@ -1,6 +1,7 @@
 -- Native types
 
 ---@class null:nil
+---@class code:function
 
 ---@class handle
 ---@class integer:number
