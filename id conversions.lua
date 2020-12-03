@@ -46,7 +46,6 @@ function formatStringOrder(order)
     end
 end
 
-
 -- Looks up the "name" field for any object (unit, item, ability)
 ---@param objectId integer
 ---@return string
