@@ -6,7 +6,7 @@ end
 
 ---@param id integer|string
 ---@return integer
-function formatCC(id)
+function formatIntCC(id)
     if type(id) == 'integer' then
         return id
     elseif type(id) == 'string' then
@@ -14,25 +14,41 @@ function formatCC(id)
     end
 end
 
+---@param id integer
+---@return string
+function getStringCC(id)
+    return ('>I4'):pack(id)
+end
+
+---@param id integer|string
+---@return string
+function formatStringCC(id)
+    if type(id) == 'string' then
+        return id
+    elseif type(id) == 'integer' then
+        return getStringCC(id)
+    end
+end
+
 ---@param orderIdString string
 ---@return integer
-function orderId(orderIdString)
+function getOrderId(orderIdString)
     return OrderId(orderIdString)
 end
 
 ---@param orderId integer
 ---@return string
-function order2StringId(orderId)
-    return OrderId2String(formatCC(orderId))
+function getOrder2StringId(orderId)
+    return OrderId2String(formatIntCC(orderId))
 end
 
----@param order_id integer|string
+---@param orderId integer|string
 ---@return integer
-function formatIntOrder(order_id)
-    if type(order_id)=='integer' then
-        return order_id
-    elseif type(order_id)=='string' then
-        return orderId(order_id)
+function formatIntOrder(orderId)
+    if type(orderId)=='integer' then
+        return orderId
+    elseif type(orderId)=='string' then
+        return getOrderId(orderId)
     end
 end
 
@@ -42,7 +58,7 @@ function formatStringOrder(order)
     if type(order)=='string' then
         return order
     elseif type(order)=='integer' then
-        return order2StringId(order)
+        return getOrder2StringId(order)
     end
 end
 
