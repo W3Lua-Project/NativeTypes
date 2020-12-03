@@ -1,38 +1,54 @@
-local _FourCC = FourCC
 ---@param id string
 ---@return number
-function FourCC(id)
-    return _FourCC(id)
+function fourCC(id)
+    return FourCC(id)
 end
 
 ---@param id integer|string
 ---@return integer
-function FormatCC(id)
+function formatCC(id)
     if type(id) == 'integer' then
         return id
     elseif type(id) == 'string' then
-        return export.FourCC(id)
+        return fourCC(id)
     end
 end
 
-local _OrderId = OrderId
 ---@param orderIdString string
 ---@return integer
-function OrderId(orderIdString)
-    return _OrderId(orderIdString)
+function orderId(orderIdString)
+    return OrderId(orderIdString)
 end
 
-local _OrderId2String = OrderId2String
 ---@param orderId integer
 ---@return string
-function OrderId2String(orderId)
-    return _OrderId2String(FormatCC(orderId))
+function order2StringId(orderId)
+    return OrderId2String(formatCC(orderId))
+end
+
+---@param order_id integer|string
+---@return integer
+function formatIntOrder(order_id)
+    if type(order_id)=='integer' then
+        return order_id
+    elseif type(order_id)=='string' then
+        return orderId(order_id)
+    end
+end
+
+---@param order integer|string
+---@return string
+function formatStringOrder(order)
+    if type(order)=='string' then
+        return order
+    elseif type(order)=='integer' then
+        return order2StringId(order)
+    end
 end
 
 -- Looks up the "name" field for any object (unit, item, ability)
-local _GetObjectName = GetObjectName
 ---@param objectId integer
 ---@return string
-function GetObjectName(objectId)
-    return _GetObjectName(objectId)
+function getObjectName(objectId)
+    return GetObjectName(objectId)
 end
