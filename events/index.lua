@@ -1,6 +1,0 @@
-require 'NativeTypes.events.game'
-require 'NativeTypes.events.player'
-require 'NativeTypes.events.unit'
-require 'NativeTypes.events.widget'
-require 'NativeTypes.events.dialog'
-require 'NativeTypes.events.limit'

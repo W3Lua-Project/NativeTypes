@@ -1,8 +1,2 @@
-require 'NativeTypes.constants'
-require 'NativeTypes.id conversions'
-
--- Events
-require 'NativeTypes.events.index'
-
--- API
-require 'NativeTypes.API.index'
+require 'modules.native-types.constants'
+require 'modules.native-types.id conversions'
