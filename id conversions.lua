@@ -32,38 +32,6 @@ function formatStringCC(id)
     end
 end
 
----@class Rawcode
-RawCode = newClass()
-local class = RawCode
-
----@param id rawcode
----@return Rawcode
-function class:new(id)
-    self.id = formatIntCC(id)
-    self.stringId = formatStringCC(id)
-    return newObject(self)
-end
-
----@param id Rawcode|rawcode
----@return integer
-function class:formatInt(id)
-    if instanceof(id, class) then
-        return id.id
-    else
-        return formatIntCC(id)
-    end
-end
-
----@param stringId Rawcode|rawcode
----@return string
-function class:formatString(stringId)
-    if instanceof(stringId, class) then
-        return stringId.stringId
-    else
-        return formatStringCC(stringId)
-    end
-end
-
 ---@param orderIdString string
 ---@return integer
 function getOrderId(orderIdString)
@@ -95,38 +63,6 @@ function formatStringOrder(order)
         return order
     elseif type(order)=='integer' then
         return getOrder2StringId(order)
-    end
-end
-
----@class Order
-Order = newClass()
-local class = Order
-
----@param id order
----@return Order
-function class:new(id)
-    self.id = formatIntOrder(id)
-    self.stringId = formatStringOrder(id)
-    return newObject(self)
-end
-
----@param id order|Order
----@return integer
-function class:formatInt(id)
-    if instanceof(id, class) then
-        return id.id
-    else
-        return formatIntOrder(id)
-    end
-end
-
----@param id order|Order
----@return string
-function class:formatString(id)
-    if instanceof(id, class) then
-        return id.stringId
-    else
-        return formatStringOrder(id)
     end
 end
 
