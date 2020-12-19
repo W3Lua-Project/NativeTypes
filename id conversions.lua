@@ -46,6 +46,22 @@ function formatStringOrder(order)
     end
 end
 
+function formatIdPlayer(playerId)
+    if typeof(playerId, 'number') then
+        return playerId
+    else
+        return GetPlayerId(playerId)
+    end
+end
+
+function formatPlayer(playerId)
+    if typeof(playerId, 'number') then
+        return Player(playerId)
+    else
+        return playerId
+    end
+end
+
 -- Looks up the "name" field for any object (unit, item, ability)
 function getObjectName(objectId)
     return GetObjectName(objectId)
