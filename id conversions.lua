@@ -1,7 +1,13 @@
+---@param id string
+---@return number
 function fourCC(id)
     return FourCC(id)
 end
 
+---@alias rawcode integer|string
+
+---@param id rawcode
+---@return integer
 function formatIntCC(id)
     if type(id) == 'integer' then
         return id
@@ -10,10 +16,14 @@ function formatIntCC(id)
     end
 end
 
+---@param id integer
+---@return string
 function getStringCC(id)
     return ('>I4'):pack(id)
 end
 
+---@param id rawcode
+---@return string
 function formatStringCC(id)
     if type(id) == 'string' then
         return id
@@ -22,14 +32,22 @@ function formatStringCC(id)
     end
 end
 
+---@param orderIdString string
+---@return integer
 function getOrderId(orderIdString)
     return OrderId(orderIdString)
 end
 
+---@param orderId integer
+---@return string
 function getOrder2StringId(orderId)
     return OrderId2String(orderId)
 end
 
+---@alias order rawcode
+
+---@param orderId order
+---@return integer
 function formatIntOrder(orderId)
     if type(orderId)=='integer' then
         return orderId
@@ -38,6 +56,8 @@ function formatIntOrder(orderId)
     end
 end
 
+---@param order order
+---@return string
 function formatStringOrder(order)
     if type(order)=='string' then
         return order
@@ -46,23 +66,9 @@ function formatStringOrder(order)
     end
 end
 
-function formatIdPlayer(playerId)
-    if typeof(playerId, 'number') then
-        return playerId
-    else
-        return GetPlayerId(playerId)
-    end
-end
-
-function formatPlayer(playerId)
-    if typeof(playerId, 'number') then
-        return Player(playerId)
-    else
-        return playerId
-    end
-end
-
 -- Looks up the "name" field for any object (unit, item, ability)
+---@param objectId integer
+---@return string
 function getObjectName(objectId)
     return GetObjectName(objectId)
 end
