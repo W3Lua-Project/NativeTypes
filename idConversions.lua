@@ -9,9 +9,9 @@ end
 ---@param id rawcode
 ---@return integer
 function formatIntCC(id)
-    if type(id) == 'integer' then
+    if typeof(id, 'integer') then
         return id
-    elseif type(id) == 'string' then
+    elseif typeof(id, 'string') then
         return fourCC(id)
     end
 end
@@ -25,9 +25,9 @@ end
 ---@param id rawcode
 ---@return string
 function formatStringCC(id)
-    if type(id) == 'string' then
+    if typeof(id, 'string') then
         return id
-    elseif type(id) == 'integer' then
+    elseif typeof(id, 'integer') then
         return getStringCC(id)
     end
 end
@@ -49,9 +49,9 @@ end
 ---@param orderId order
 ---@return integer
 function formatIntOrder(orderId)
-    if type(orderId)=='integer' then
+    if typeof(orderId, 'integer') then
         return orderId
-    elseif type(orderId)=='string' then
+    elseif typeof(orderId, 'string') then
         return getOrderId(orderId)
     end
 end
@@ -59,9 +59,9 @@ end
 ---@param order order
 ---@return string
 function formatStringOrder(order)
-    if type(order)=='string' then
+    if typeof(order, 'string') then
         return order
-    elseif type(order)=='integer' then
+    elseif typeof(order, 'integer') then
         return getOrder2StringId(order)
     end
 end
