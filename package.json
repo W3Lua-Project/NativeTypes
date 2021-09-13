@@ -1,0 +1,25 @@
+{
+  "name": "native-types",
+  "version": "1.0.0",
+  "description": "декларация нативных типов",
+  "main": "index.lua",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wc3lua/native-types.git"
+  },
+  "keywords": [
+    "ceres",
+    "warcraft",
+    "lua",
+    "wc3lua"
+  ],
+  "author": "WriteCoin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wc3lua/native-types/issues"
+  },
+  "homepage": "https://github.com/wc3lua/native-types#readme"
+}
